@@ -170,3 +170,26 @@ h1 {
   top: 1px;
   right: 5px;
 }
+
+/* Picture Bar */
+
+#image-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 172px;
+  z-index: 1;
+  background: #FFF;
+  box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14),0 3px 14px 2px rgba(0,0,0,0.12),0 5px 5px -3px rgba(0,0,0,0.2);
+  transform: translateY(-225px);
+  transition: transform 300ms cubic-bezier(.4, 0, .2, 1);
+  display: flex;
+  align-items: center;
+  overflow-x: visible;
+  overflow-y: hidden;
+}
+
+#image-bar.act {
+  transform: translateY(0);
+}

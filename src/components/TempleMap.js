@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import PictureBar from './PictureBar'
 
 class TempleMap extends Component {
 
@@ -13,6 +14,21 @@ class TempleMap extends Component {
     }
 
     this.markers = []
+  }
+
+  /* Select the appropriate marker if another temple has been selected */ 
+  
+  componentDidUpdate() {
+    const activeTemple = this.props.temples.find(t => t.active)
+
+    if (!activeTemple) {
+      return
+    }
+
+    if (!this.state.activeMarker || this.state.activeMarker.temple.id !== activeTemple.id) {
+      const ma = this.markers.find(m => m && m.props.temple.id === activeTemple.id)
+      ma && this.selectMarker(null, ma.marker)
+    }
   }
 
   /* Create markers based on the temple states */
@@ -53,16 +69,19 @@ class TempleMap extends Component {
       this.state.activeMarker.setAnimation(0)
     }
 
-    this.setState({
-      activeMarker: null,
-      showInfoWindow: false
-    })
+    if (this.state.showInfoWindow) {
+      this.setState({
+        activeMarker: null,
+        showInfoWindow: false,
+      })
+    }
   }
 
   render() {
+    const activeTemple = this.props.temples.find(t => t.active)
 
     return (
-      <div> 
+      <div role="application" aria-label="Google Maps application for showing famous temples in kyoto"> 
         <Map 
           temples={this.props.temples}
           initialCenter={{lat: 35.02107, lng: 135.75385}} 
@@ -82,6 +101,12 @@ class TempleMap extends Component {
               {this.state.infoText}
             </div>  
           </InfoWindow>
+
+          <PictureBar 
+            active={activeTemple != null}
+            query={activeTemple && activeTemple.unsplashQuery}
+            unselect={this.unselectMarker}
+          />
 
         </Map>
       </div>

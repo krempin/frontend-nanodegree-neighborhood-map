@@ -30,7 +30,7 @@ The app displays popular temples in Kyoto in a map and on a list on the left sid
 
 - [x] Use React
 - [x] Google Maps is integrated asynchroniously
-- [ ] The app can be used on all devices and the styling is responsive
+- [x] The app can be used on all devices and the styling is responsive
 - [ ] Data requests that fail are handled gracefully using common fallback techniques (i.e. AJAX error or fail methods). 'Gracefully' means the user isn’t left wondering why a component isn’t working. If an API doesn’t load there should be some visible indication on the page that it didn’t load.
 
 **Documentation**
@@ -52,7 +52,7 @@ The app displays popular temples in Kyoto in a map and on a list on the left sid
 
 **Accessibility**
 - [x] All content-related images include appropriate alternate text that clearly describes the content of the image.
-- [ ] Elements on the page use the appropriate semantic elements. For those elements in which a semantic element is not available, appropriate ARIA roles are defined.
+- [x] Elements on the page use the appropriate semantic elements. For those elements in which a semantic element is not available, appropriate ARIA roles are defined.
 - [x] Focus is appropriately managed allowing users to noticeably tab through each of the important elements of the page. Modal or interstitial windows appropriately lock focus.
 
 ### Resources
