@@ -174,7 +174,7 @@ h1 {
 /* Picture Bar */
 
 #image-bar {
-  position: absolute;
+  position: relative;
   left: 0;
   right: 0;
   top: 0;
@@ -190,6 +190,93 @@ h1 {
   overflow-y: hidden;
 }
 
+#image-bar .picture {
+  flex: 0 0 200px;
+  height: 94%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  margin-right: 0.5%;
+  position: relative;
+  cursor: zoom-in;
+}
+
+#image-bar .picture:first-child {
+  margin-left: 0.4%;
+}
+
+@media only screen and (max-width: 600px) {
+  #image-bar .picture {
+    flex: 0 0 90px;
+  }
+}
+
 #image-bar.act {
   transform: translateY(0);
+}
+
+#image-bar .picture .info-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(18, 18, 18, 0.75);
+  display: flex;
+  align-items: center;
+  transform: translateY(175px);
+  transition: all 400ms ease-in-out;
+}
+
+#image-bar .picture:hover .info-overlay {
+  transform: translateY(0px);
+}
+
+@media only screen and (max-width: 600px) {
+  #image-bar .picture .info-overlay {
+    display: none;
+  }
+}
+
+#image-bar .picture .info-overlay .likes {
+  position: absolute;  
+  top: 5px;
+  right: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#image-bar .picture .info-overlay .likes::before {
+  content: '\2764';
+  color: #D91517;
+  font-size: 20px;
+}
+
+#image-bar .picture .info-overlay .likes::after {
+  content: attr(data-likes);
+  color: #D91517;
+  font-size: 11px;
+  font-weight: 700;
+  position: relative;
+  top: -8px;
+  left: 0;
+}
+
+#image-bar .picture .info-overlay .descr {
+  padding: 15px 40px;
+  color: #F8F8F8;
+  text-transform: capitalize;
+  font-weight: 300;
+  text-align: center;
+}
+
+.credit {
+  position: absolute;
+  z-index: 100;
+  background: #fff;
+  padding: 0 4px;
+  padding: 0 0.25rem;
+  bottom: 0;
+  right: 0;
 }
