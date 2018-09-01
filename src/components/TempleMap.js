@@ -41,6 +41,7 @@ class TempleMap extends Component {
         name={t.title}
         onClick={this.selectMarker}
         position={t.position} 
+        ref={m => this.markers[t.id] = m}
       /> 
     )
   }

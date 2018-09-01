@@ -17,6 +17,8 @@ class List extends Component {
               <li 
                 key={t.id} 
                 tabIndex="0"
+                className={t.active ? 'act' : ''}
+                onClick={() => this.props.setActiveTemple(t)} 
               >
                 {t.title}
               </li>
@@ -27,6 +29,5 @@ class List extends Component {
     );
   }
 }
-
 
 export default List

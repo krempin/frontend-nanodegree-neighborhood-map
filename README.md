@@ -50,7 +50,7 @@ The app displays popular temples in Kyoto in a map and on a list on the left sid
 - [x] If you click on a marker on the map, an info window will appear 
 - [x] The info window contains additional data from a third party service integrated via API
 - [x] The current clicked marker / temple on the list will be marked by color or animation
-- [ ] If you click on a temple link on the list, the marker will be active, animated and an info window will open
+- [x] If you click on a temple link on the list, the marker will be active, animated and an info window will open
 
 **Accessibility**
 - [x] All content-related images include appropriate alternate text that clearly describes the content of the image.
@@ -63,4 +63,4 @@ The app displays popular temples in Kyoto in a map and on a list on the left sid
 * The Google map was integrated with the [Google Maps React Module](https://www.npmjs.com/package/google-maps-react)
 * Accessible Off Canvas Menu [React Aria Offcanvas](https://github.com/neosiae/react-aria-offcanvas)
 * Promise based HTTP client for the browser and node.js [Axios](https://www.npmjs.com/package/axios)
-* Error messages: [Toastify](https://github.com/fkhadra/react-toastify)
+* Error messages by [Toastify](https://github.com/fkhadra/react-toastify)
