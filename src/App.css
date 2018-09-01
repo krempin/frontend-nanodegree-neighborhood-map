@@ -16,6 +16,59 @@ body {
   background-image: url('./img/background.jpg');
 }
 
+/* ----- Sidebar Styles ----- */
+
+#sidebar {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  bottom: 0;
+}
+
+/* Default button style by https://css-tricks.com/overriding-default-button-styles/ */
+
+#sidebar button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: #2a2a2a;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+#sidebar button:hover,
+#sidebar button:focus {
+  background: #b70000;
+}
+
+#sidebar button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+#sidebar button:active {
+  transform: scale(0.99);
+}
+
+.offCanvasLayer {
+  background-image: url('./img/background.jpg');
+  height: 100%;
+}
+
+.offCanvasLayer > button {
+  width: 100%;
+}
+
 /* Header */
 
 header  {
@@ -23,6 +76,10 @@ header  {
   padding: 32px 16px 16px 16px;
   padding: 2rem 1rem 1rem 1rem;
   text-align: center;
+}
+
+header > button {
+  width: 100%;
 }
 
 h1 {
