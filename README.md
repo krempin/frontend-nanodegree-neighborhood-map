@@ -1,6 +1,8 @@
 # Kyoto Temple Map
 
-![Screenshot](src/img/screenshot.png)
+![Screenshot](src/img/screenshot01.png)
+
+![Screenshot](src/img/screenshot02.png)
 
 This is the final project for the Udacity Front End Nanodegree: The react-based app provides a map showing popular temples in Kyoto. The purpose of this project is to demonstrate understanding of 
 
@@ -59,3 +61,6 @@ The app displays popular temples in Kyoto in a map and on a list on the left sid
 
 * This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)
 * The Google map was integrated with the [Google Maps React Module](https://www.npmjs.com/package/google-maps-react)
+* Accessible Off Canvas Menu [React Aria Offcanvas](https://github.com/neosiae/react-aria-offcanvas)
+* Promise based HTTP client for the browser and node.js [Axios](https://www.npmjs.com/package/axios)
+* Error messages: [Toastify](https://github.com/fkhadra/react-toastify)
