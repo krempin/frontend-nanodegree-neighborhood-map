@@ -3,18 +3,55 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 class TempleMap extends Component {
 
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      activeMarker: null
+    }
+
+    this.markers = []
+  }
 
   /* Create markers based on the temple states */
-  
+
   getMarkers() {
     return this.props.temples.map(t => t.visible &&
       <Marker
         key={t.id} 
         temple={t} 
         name={t.title}
+        onClick={this.selectMarker}
         position={t.position} 
       /> 
     )
+  }
+
+  /* Set markers as active or incative */
+
+  selectMarker = (props, marker) => {
+    if (this.state.activeMarker) {
+      this.state.activeMarker.setAnimation(0)
+    }   
+
+    marker.setAnimation(1)
+    this.props.setActiveTemple(marker.temple)
+
+    this.setState({
+      activeMarker: marker,
+    })
+  }
+
+  unselectMarker = () => {
+    this.props.setActiveTemple()
+    
+    if (this.state.activeMarker) {
+      this.state.activeMarker.setAnimation(0)
+    }
+
+    this.setState({
+      activeMarker: null,
+    })
   }
 
   render() {
