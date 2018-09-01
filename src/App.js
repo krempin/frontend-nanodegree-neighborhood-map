@@ -14,7 +14,9 @@ class App extends Component {
     	return (
       		<div className="App">
         		<Sidebar />
-        		<TempleMap />
+        		<TempleMap 
+        			temples={this.state.temples} 
+        		/>
       		</div>
     	);
   	}

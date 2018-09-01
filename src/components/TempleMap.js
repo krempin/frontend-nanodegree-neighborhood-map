@@ -2,6 +2,21 @@ import React, { Component } from 'react'
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 class TempleMap extends Component {
+
+
+  /* Create markers based on the temple states */
+  
+  getMarkers() {
+    return this.props.temples.map(t => t.visible &&
+      <Marker
+        key={t.id} 
+        temple={t} 
+        name={t.title}
+        position={t.position} 
+      /> 
+    )
+  }
+
   render() {
 
     return (
@@ -12,7 +27,11 @@ class TempleMap extends Component {
           onClick={this.unselectMarker}
           google={this.props.google} // listen for clicks on the map
           zoom={12} // zoom level
-        />
+        >
+
+          {this.getMarkers()}
+
+        </Map>
       </div>
     );
   }
