@@ -4,8 +4,13 @@ class Search extends Component {
   render() {
 
     return (
-      <div> 
-        Search
+      <div className="searchInput">
+        <input 
+          type="text" 
+          name="searchquery"
+          placeholder="Search by temple"
+        />
+
       </div>
     );
   }
