@@ -7,7 +7,10 @@ class Sidebar extends Component {
 
     return (
       <div id="sidebar"> 
-        Sidebar
+        <header>
+            <img src="/logo_mini.jpg" alt="" />
+            <h1><span className="highlighted-header">Popular temples</span> around Kyoto</h1>
+        </header>
         <Search />
         <List 
             setActiveTemple={this.props.setActiveTemple}

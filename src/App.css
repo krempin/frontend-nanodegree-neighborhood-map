@@ -1,28 +1,108 @@
-.App {
+@charset "utf-8";
+
+body,td,th,p {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background-image: url('./img/background.jpg');
+}
+
+/* Header */
+
+header  {
+  background: #2a2a2a;
+  padding: 32px 16px 16px 16px;
+  padding: 2rem 1rem 1rem 1rem;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+h1 {
+  font-size: 12.8px;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  line-height: 1.8;
+  color: #dedede;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 8px;
+  padding: 0.5rem;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.highlighted-header {
+  display: block;
+  font-size: 1rem;
   color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
+/* Search */
+
+.searchInput {
+  background: #fff;
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
+  background: #fff;
 }
 
-.App-intro {
-  font-size: large;
+.searchInput input {
+  border: 1px solid #fff;
+  font-size: 0.875rem;
+  padding: 12px;
+  padding: 0.75rem;
+  width: 90%;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* Temple Listing */
+
+.temples-list ul {
+  margin: 16px 32px 32px 32px;
+  margin: 1rem 2rem 2rem 2rem;
+  padding: 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+.temples-list li {
+  list-style: none;
+  display: block;
+  color: #d91517;
+  font-weight: bold;
+  padding: 4px;
+  padding: 0.25rem;
+  text-align: left;
+}
+
+.temples-list li:first-child {
+
+  margin-top: 16px;
+  margin-top: 1rem;
+}
+
+.temples-list li.act,
+.temples-list li:hover {
+  background-color: rgba(236, 39, 49, 0.1);
+}
+
+.temples-list li.act::after {
+  content: '\2713';
+  float: right;
+  color: #81C500;
+  background: #FFF;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 1px;
+  right: 5px;
 }
