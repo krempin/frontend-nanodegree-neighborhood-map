@@ -42,18 +42,18 @@ The app displays popular temples in Kyoto in a map and on a list on the left sid
 **Map functionality**
 
 - [x] The map contains at least 5 location markers
-- [ ] The sidebar contains a list of these 5 locations
-- [ ] The sidebar contains an input that filters locations by search input
-- [ ] If a search will be performed, the markers on the map will also be filtered
+- [x] The sidebar contains a list of these 5 locations
+- [x] The sidebar contains an input that filters locations by search input
+- [x] If a search will be performed, the markers on the map will also be filtered
 - [x] If you click on a marker on the map, an info window will appear 
 - [ ] The info window contains additional data from a third party service integrated via API
 - [ ] The current clicked marker / temple on the list will be marked by color or animation
 - [ ] If you click on a temple link on the list, the marker will be active, animated and an info window will open
 
 **Accessibility**
-- [ ] All content-related images include appropriate alternate text that clearly describes the content of the image.
+- [x] All content-related images include appropriate alternate text that clearly describes the content of the image.
 - [ ] Elements on the page use the appropriate semantic elements. For those elements in which a semantic element is not available, appropriate ARIA roles are defined.
-- [ ] Focus is appropriately managed allowing users to noticeably tab through each of the important elements of the page. Modal or interstitial windows appropriately lock focus.
+- [x] Focus is appropriately managed allowing users to noticeably tab through each of the important elements of the page. Modal or interstitial windows appropriately lock focus.
 
 ### Resources
 

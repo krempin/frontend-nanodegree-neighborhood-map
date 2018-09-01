@@ -118,6 +118,13 @@ h1 {
   width: 90%;
 }
 
+.search-results {
+  padding: 4px;
+  padding: 0.25rem;
+  margin: 0 32px;
+  margin: 0 2rem; 
+}
+
 /* Temple Listing */
 
 .temples-list ul {
