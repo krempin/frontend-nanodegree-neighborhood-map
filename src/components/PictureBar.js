@@ -62,7 +62,7 @@ class PictureBar extends Component {
           </a> 
         )}
         <div class="credit">
-          Images provided by <a href="https://unsplash.com/" target="_blank">Unsplash.com</a>
+          Images provided by <a href="https://unsplash.com/" target="_blank" rel="noopener noreferrer">Unsplash.com</a>
         </div>
       </div>
     )
