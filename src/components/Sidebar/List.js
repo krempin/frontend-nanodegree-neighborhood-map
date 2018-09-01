@@ -5,7 +5,18 @@ class List extends Component {
 
     return (
       <div> 
-        List
+        <nav id="menu" className="temples-list">
+          <ul>
+            {this.props.temples.map(t => (
+              <li 
+                key={t.id} 
+                tabIndex="0"
+              >
+                {t.title}
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     );
   }

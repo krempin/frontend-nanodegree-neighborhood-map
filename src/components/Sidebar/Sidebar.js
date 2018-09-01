@@ -6,10 +6,13 @@ class Sidebar extends Component {
   render() {
 
     return (
-      <div> 
+      <div id="sidebar"> 
         Sidebar
         <Search />
-        <List />
+        <List 
+            setActiveTemple={this.props.setActiveTemple}
+            temples={this.props.temples.filter(t => t.visible)} 
+        />
       </div>
     );
   }

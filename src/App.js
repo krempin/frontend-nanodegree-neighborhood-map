@@ -38,7 +38,10 @@ class App extends Component {
   	render() {
     	return (
       		<div className="App">
-        		<Sidebar />
+        		<Sidebar
+              temples={this.state.temples} 
+              setActiveTemple={this.setActiveTemple}
+            />
         		<TempleMap 
         			temples={this.state.temples} 
         			setActiveTemple={this.setActiveTemple}
