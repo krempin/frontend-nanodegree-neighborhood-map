@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import OffCanvas from 'react-aria-offcanvas';
+import escapeRegExp from 'escape-string-regexp'
 import List from './List'
 import Search from './Search'
 
 class Sidebar extends Component {
+
+
+  /* Checks whether off canvas is open or closed */
 
   state = {
       isOpen: false,
@@ -16,6 +20,24 @@ class Sidebar extends Component {
   close = () => {
       this.setState({ isOpen: false });
   };
+
+  /* Update the temples in the list and on the map by search query */
+
+  onSearch = (query) => {
+    this.props.temples.forEach(t =>
+      this.props.updateTemple(t, { visible: false })
+    )
+    this.getTemplesByName(query).forEach(t =>
+      this.props.updateTemple(t, { visible: true })
+    )
+  }
+
+  /* Return all temples which match the query */
+
+  getTemplesByName(name) {
+    const match = new RegExp(escapeRegExp(name), 'i')
+    return this.props.temples.filter(t => match.test(t.title))
+  }
 
   render() {
 
@@ -53,7 +75,9 @@ class Sidebar extends Component {
                 <h1><span className="highlighted-header">Popular temples</span> around Kyoto</h1>
             </header>
             
-            <Search />
+            <Search 
+              onSearch={this.onSearch}
+            />
             
             <List 
               setActiveTemple={this.props.setActiveTemple}

@@ -41,10 +41,12 @@ class App extends Component {
         		<Sidebar
               temples={this.state.temples} 
               setActiveTemple={this.setActiveTemple}
+              updateTemple={this.updateTemple} 
             />
         		<TempleMap 
         			temples={this.state.temples} 
         			setActiveTemple={this.setActiveTemple}
+              updateTemple={this.updateTemple} 
         		/>
       		</div>
     	);
