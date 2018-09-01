@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
+
 import TempleState from './state'
 import Sidebar from './components/Sidebar/Sidebar'
 import TempleMap from './components/TempleMap'
@@ -37,18 +39,19 @@ class App extends Component {
 
   	render() {
     	return (
-      		<div className="App">
-        		<Sidebar
-              temples={this.state.temples} 
-              setActiveTemple={this.setActiveTemple}
-              updateTemple={this.updateTemple} 
-            />
-        		<TempleMap 
-        			temples={this.state.temples} 
-        			setActiveTemple={this.setActiveTemple}
-              updateTemple={this.updateTemple} 
-        		/>
-      		</div>
+    		<div className="App">
+      		<Sidebar
+            temples={this.state.temples} 
+            setActiveTemple={this.setActiveTemple}
+            updateTemple={this.updateTemple} 
+          />
+      		<TempleMap 
+      			temples={this.state.temples} 
+      			setActiveTemple={this.setActiveTemple}
+            updateTemple={this.updateTemple} 
+      		/>
+    		</div>
+        <ToastContainer />
     	);
   	}
 }
