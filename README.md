@@ -29,23 +29,23 @@ The app displays popular temples in Kyoto in a map and on a list on the left sid
 **General**
 
 - [x] Use React
-- [ ] Google Maps is integrated asynchroniously
+- [x] Google Maps is integrated asynchroniously
 - [ ] The app can be used on all devices and the styling is responsive
 - [ ] Data requests that fail are handled gracefully using common fallback techniques (i.e. AJAX error or fail methods). 'Gracefully' means the user isn’t left wondering why a component isn’t working. If an API doesn’t load there should be some visible indication on the page that it didn’t load.
 
 **Documentation**
 
 - [x] A README file is included detailing all steps required to successfully run the application.
-- [ ] Comments are present and effectively explain longer code procedures.
+- [x] Comments are present and effectively explain longer code procedures.
 - [ ] Provide attribution for the source of additional data. For example, if using Foursquare, indicate somewhere in your UI and in your README that you are using Foursquare data.
 
 **Map functionality**
 
-- [ ] The map contains at least 5 location markers
+- [x] The map contains at least 5 location markers
 - [ ] The sidebar contains a list of these 5 locations
 - [ ] The sidebar contains an input that filters locations by search input
 - [ ] If a search will be performed, the markers on the map will also be filtered
-- [ ] If you click on a marker on the map, an info window will appear 
+- [x] If you click on a marker on the map, an info window will appear 
 - [ ] The info window contains additional data from a third party service integrated via API
 - [ ] The current clicked marker / temple on the list will be marked by color or animation
 - [ ] If you click on a temple link on the list, the marker will be active, animated and an info window will open
@@ -58,3 +58,4 @@ The app displays popular temples in Kyoto in a map and on a list on the left sid
 ### Resources
 
 * This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)
+* The Google map was integrated with the [Google Maps React Module](https://www.npmjs.com/package/google-maps-react)

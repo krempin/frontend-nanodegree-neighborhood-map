@@ -7,7 +7,9 @@ class TempleMap extends Component {
     super(props)
 
     this.state = {
-      activeMarker: null
+      activeMarker: null,
+      infoText: '',
+      showInfoWindow: false
     }
 
     this.markers = []
@@ -39,6 +41,8 @@ class TempleMap extends Component {
 
     this.setState({
       activeMarker: marker,
+      infoText: marker.temple.title,
+      showInfoWindow: true
     })
   }
 
@@ -51,6 +55,7 @@ class TempleMap extends Component {
 
     this.setState({
       activeMarker: null,
+      showInfoWindow: false
     })
   }
 
@@ -67,6 +72,16 @@ class TempleMap extends Component {
         >
 
           {this.getMarkers()}
+
+          <InfoWindow 
+            onClose={this.unselectMarker}
+            marker={this.state.activeMarker}
+            visible={this.state.showInfoWindow}
+          >
+            <div>
+              {this.state.infoText}
+            </div>  
+          </InfoWindow>
 
         </Map>
       </div>
