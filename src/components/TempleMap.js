@@ -3,7 +3,6 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import PictureBar from './PictureBar'
 
 class TempleMap extends Component {
-
   constructor(props) {
     super(props)
 
@@ -17,11 +16,11 @@ class TempleMap extends Component {
   }
 
   /* Select the appropriate marker if another temple has been selected */ 
-  
   componentDidUpdate() {
     const activeTemple = this.props.temples.find(t => t.active)
 
     if (!activeTemple) {
+      this.unselectMarker()
       return
     }
 
@@ -32,7 +31,6 @@ class TempleMap extends Component {
   }
 
   /* Create markers based on the temple states */
-
   getMarkers() {
     return this.props.temples.map(t => t.visible &&
       <Marker
@@ -47,7 +45,6 @@ class TempleMap extends Component {
   }
 
   /* Set markers as active or incative */
-
   selectMarker = (props, marker) => {
     if (this.state.activeMarker) {
       this.state.activeMarker.setAnimation(0)
@@ -90,7 +87,6 @@ class TempleMap extends Component {
           google={this.props.google} // listen for clicks on the map
           zoom={12} // zoom level
         >
-
           {this.getMarkers()}
 
           <InfoWindow 
