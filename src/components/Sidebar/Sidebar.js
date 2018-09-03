@@ -1,31 +1,29 @@
 import React, { Component } from 'react'
 import OffCanvas from 'react-aria-offcanvas';
 import escapeRegExp from 'escape-string-regexp'
+
 import List from './List'
 import Search from './Search'
 
 class Sidebar extends Component {
-
-
   /* Checks whether off canvas is open or closed */
-
   state = {
-      isOpen: false,
+    isOpen: false,
   };
 
   open = () => {
-      this.setState({ isOpen: true });
+    this.props.setActiveTemple()
+    this.setState({ isOpen: true });
   };
 
   close = () => {
-      this.setState({ isOpen: false });
+    this.setState({ isOpen: false });
   };
 
   /* Update the temples in the list and on the map by search query */
-
   onSearch = (query) => {
     this.props.temples.forEach(t =>
-      this.props.updateTemple(t, { visible: false })
+      this.props.updateTemple(t, { visible: false, active: false })
     )
     this.getTemplesByName(query).forEach(t =>
       this.props.updateTemple(t, { visible: true })
@@ -81,6 +79,7 @@ class Sidebar extends Component {
             
             <List 
               setActiveTemple={this.props.setActiveTemple}
+              hideOffCanvas={this.close}
               temples={this.props.temples.filter(t => t.visible)} 
             />
 
