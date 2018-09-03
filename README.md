@@ -26,6 +26,16 @@ Once started, a browser window will open and the app should be displayed. You ca
 
 The app displays popular temples in Kyoto in a map and on a list on the left side. You can either click on a marker or on the temple name in the list to open information about the temple or shrine. You can also filter temples via the search input field.
 
+### Usage of Service Worker
+
+The service worker is only available when the app is in its production mode. You can create a minified bundle with 
+
+```sh
+$ npm run build
+```
+
+For more informations, visit [Create React App](https://github.com/facebook/create-react-app) on github. 
+
 ### Requirements for this project
 
 **General**
