@@ -280,3 +280,14 @@ h1 {
   bottom: 0;
   right: 0;
 }
+
+/* Map loading error */
+
+.loader {
+  background: #000;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  color: white;
+  text-align: center;
+}

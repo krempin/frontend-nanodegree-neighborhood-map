@@ -40,6 +40,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div class="loader">The map can not be loaded<br />
+          You need an internet connection to use the map</div>
         <Sidebar
           temples={this.state.temples}
           setActiveTemple={this.setActiveTemple}
