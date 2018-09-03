@@ -21,6 +21,7 @@ class Search extends Component {
           type="text" 
           name="searchquery"
           placeholder="Search by temple"
+          aria-label="search text search by temple" 
           onChange={e => this.props.onSearch(e.target.value)}
         />
 
