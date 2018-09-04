@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import PictureBar from './PictureBar'
+import { toast } from 'react-toastify'
 
 class TempleMap extends Component {
   constructor(props) {
@@ -13,6 +14,12 @@ class TempleMap extends Component {
     }
 
     this.markers = []
+  }
+
+  componentDidMount() {
+
+    window.gm_authFailure = () => toast.error("Map could not be loaded. Incorrect Google Maps API key. Please check the key.")
+
   }
 
   /* Select the appropriate marker if another temple has been selected */ 
